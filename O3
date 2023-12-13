@@ -131,3 +131,37 @@ cout<<"\n***************CASSETTE**************\n";
 cassette.putData();
 return 0;
 }
+
+
+
+C4
+
+
+
+#include<fstream>
+#include<iostream>
+using namespace std;
+
+int main(){
+
+ofstream out;
+out.open("Lab4.txt");
+out<<"Good morning everyone.\n";
+out<<"I am SE student-23-24.\n";
+out<<"I am from the AI and DS department.\n";
+out.close();
+ifstream in;
+string st;
+in.open("Lab4.txt");
+if(!in){
+cerr<<"Lab4.txt could not be opened for reading"<<endl;
+exit(1);
+}
+cout<<"The contents of the file are: "<<endl;
+while(in.eof() == 0){
+getline(in , st);
+cout<<st<<endl;
+}
+in.close();
+return 0;
+}
